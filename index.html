@@ -80,8 +80,9 @@
 <script>
     function login(){
         var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
 
-            if (isNaN(kWh) || kWh < 0 || kWh === ""){
+        if (username === ){
                 document.getElementById("error").innerHTML = "Please input a non negative number.";
             }
             else if (kWh < 101){
