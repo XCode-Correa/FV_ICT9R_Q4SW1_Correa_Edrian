@@ -48,14 +48,14 @@
 
     <div class="text-center">
         <label class="form-label fs-9 fw-bold bg-dark text-light p-2" style="border-radius: 13px;" for="username">Username</label>
-	    <input type="text" class="form-control form-control-sm" name="username" placeholder="Enter Username" required>
+	    <input type="text" id="username" class="form-control form-control-sm" name="username" placeholder="Enter Username" required>
     </div>
 
     <br>
 
     <div class="text-center">
         <label class="form-label fs-9 fw-bold bg-dark text-light p-2" style="border-radius: 13px;" for="password">Password</label>
-	    <input type="password" class="form-control form-control-sm" name="password" placeholder="Enter Password" required>
+	    <input type="password" id="password" class="form-control form-control-sm" name="password" placeholder="Enter Password" required>
     </div>
 
     <br>
@@ -79,7 +79,7 @@
 
 <script>
     function login(){
-            var kWh = document.getElementById("kWh").value;
+        var username = document.getElementById("username").value;
 
             if (isNaN(kWh) || kWh < 0 || kWh === ""){
                 document.getElementById("error").innerHTML = "Please input a non negative number.";
