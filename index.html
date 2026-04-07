@@ -84,23 +84,14 @@
         var username = document.getElementById("username").value;
         var password = document.getElementById("password").value;
 
-        if (username === ){
+        var correctuser = anonymous // set username
+        var correctpass = 1234 // set password
+
+        if (isNaN(username) || kWh < 0 || kWh === ""){
                 document.getElementById("error").innerHTML = "Please input a non negative number.";
             }
-            else if (kWh < 101){
+        else if (kWh < 101){
                 alert("Lifeline Consumer: Discounted electricity rates");
-            }
-            else if (kWh < 201){
-                alert("Low Consumption: Normal residential rate");
-            }
-            else if (kWh < 301){
-                alert("Average Consumption: Typical electricity usage");
-            }
-            else if (kWh < 501){
-                alert("High Consumption: Higher electricity usage");
-            }
-        else {
-            alert("Very High Consumption: Heavy electricity users");
             }
     }
 </script>
