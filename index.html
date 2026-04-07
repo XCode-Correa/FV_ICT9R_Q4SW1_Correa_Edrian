@@ -13,6 +13,10 @@
             background-position: center;
             background-attachment: fixed;
             background-color: rgb(34, 34, 34);
+            display: flex;
+            justify-content: center; 
+            align-items: center;     
+            height: 100vh; 
         }
         img{
             height: 60px;
@@ -25,10 +29,10 @@
             font-size: 25px;
         }
         .fs-8{
-            font-size: 12px;
+            font-size: 15px;
         }
         .fs-9{
-            font-size: 15px;
+            font-size: 12px;
         }
         .pt-6 {
             padding-top: 65px;
@@ -37,32 +41,30 @@
 </head>
 <body>
 
-<br>
-
-<div style="background-color: rgba(255, 255, 255, 0.5); width: 500px; border-radius: 30px;" class="container text-dark p-3">
+<div style="background-color: rgba(255, 255, 255, 0.5); width: 400px; border-radius: 30px;" class="container text-dark p-3">
     <center>
-        <h1 style="font-family: 'Courier New'" class="fw-bold fs-1">Registration</h1>
+        <h1 class="fw-bold">Log In</h1>
     </center>
 
     <br>
 
     <div class="text-center">
-        <label class="form-label fs-9 fw-bold bg-dark text-light p-2" style="border-radius: 13px;" for="username">Username</label>
-	    <input type="text" id="username" class="form-control form-control-sm" name="username" placeholder="Enter Username" required>
+        <label class="form-label fs-9 fw-bold bg-dark text-light p-1 my-1" style="border-radius: 20px;" for="username">Username</label>
+	    <input type="text" id="username" class="form-control form-control-sm rounded-pill text-center" name="username" placeholder="Enter here" required>
     </div>
 
     <br>
 
     <div class="text-center">
-        <label class="form-label fs-9 fw-bold bg-dark text-light p-2" style="border-radius: 13px;" for="password">Password</label>
-	    <input type="password" id="password" class="form-control form-control-sm" name="password" placeholder="Enter Password" required>
+        <label class="form-label fs-9 fw-bold bg-dark text-light p-1 my-1" style="border-radius: 20px;" for="password">Password</label>
+	    <input type="password" id="password" class="form-control form-control-sm rounded-pill text-center" name="password" placeholder="*****" required>
     </div>
 
     <br>
 
     <div class="form-check">
-        <input type="checkbox" class="form-check-input" name="stay" required>
-        <label class="form-label fs-9 fw-bold" for="stay">Stay logged in.</label>
+        <input type="checkbox" class="form-check-input my-1" name="stay" required>
+        <label class="form-label fs-8 fw-bold my-1" for="stay">Stay logged in.</label>
         <p class="text-light"><i>Your session will stay active in this device.</i></p>
     </div>
 
