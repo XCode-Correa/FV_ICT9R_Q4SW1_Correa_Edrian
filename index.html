@@ -26,7 +26,7 @@
             background-image: linear-gradient(to right, #000000, #00323b);
         }
         .fs-7{
-            font-size: 25px;
+            font-size: 14px;
         }
         .fs-8{
             font-size: 15px;
@@ -41,10 +41,10 @@
 </head>
 <body>
 
-<div style="background-color: rgba(255, 255, 255, 0.5); width: 400px; border-radius: 30px;" class="container text-dark p-3">
-    <center>
+<div style="background-color: rgba(255, 255, 255, 0.5); width: 450px; border-radius: 30px;" class="container text-dark p-3">
+    <div class="text-center">
         <h1 class="fw-bold">Log In</h1>
-    </center>
+    </div>
 
     <br>
 
@@ -62,39 +62,57 @@
 
     <br>
 
-    <div class="form-check">
-        <input type="checkbox" class="form-check-input my-1" name="stay" required>
-        <label class="form-label fs-8 fw-bold my-1" for="stay">Stay logged in.</label>
-        <p class="text-light"><i>Your session will stay active in this device.</i></p>
+    <div class="form-check d-flex align-items-center ps-0">
+        <input type="checkbox" id="stay" class="form-check-input m-0 me-2" onchange="checkstay()">
+        <label class="form-check-label fs-8 fw-bold" for="stay">Stay logged in.</label>
+    </div>
+    
+    <p id="msg" class="fs-7 text-light" style="height: 20px; padding-left: 25px;"></p>
+
+    <div class="text-center">
+        <button style="width: 100px;" type="button" id="submit" name="submit" class="btn btn-dark rounded-pill" onclick="login()">Login</button>
+
+        <a href="index.html"><button style="width: 100px;" type="button" id="submit" name="submit" class="btn btn-light rounded-pill">Cancel</button></a>
     </div>
 
-    <br>
-    
-    <center>
-        <button style="width: 100px;" type="submit" id="submit" name="submit" class="btn btn-dark" onclick="login()">Login</button>
-
-        <a href="index.html"><button style="width: 100px;" type="submit" id="submit" name="submit" class="btn btn-light">Cancel</button></a>
-    </center>
+    <div class="text-center">
+        <hr class="w-100 mx-auto text-dark"> 
+        <a href="forgot.html" class="text-light fs-8 text-decoration-underline">Forgot username / password?</a>
+    </div>
 </div>
-
-<br><br>
 
 <script>
     function login(){
         var username = document.getElementById("username").value;
         var password = document.getElementById("password").value;
 
-        var correctuser = anonymous // set username
-        var correctpass = 1234 // set password
+        var correctuser = "user1"; // set username
+        var correctpass = "1234"; // set password
 
-        if (isNaN(username) || kWh < 0 || kWh === ""){
-                document.getElementById("error").innerHTML = "Please input a non negative number.";
-            }
-        else if (kWh < 101){
-                alert("Lifeline Consumer: Discounted electricity rates");
-            }
+        if (username === "" || password === ""){
+            window.alert("Please input your username and password.");
+        } 
+        else if (username === correctuser && password === correctpass) {
+            window.alert("Welcome " + username + "!");
+        } 
+        else {
+            window.alert("Incorrect username and/or password.");
+        }
     }
+    function checkstay() {
+        let isChecked = document.getElementById("stay").checked; 
+
+        switch(isChecked) {
+            case true:
+                document.getElementById("msg").innerHTML = "<i>Your session will stay active in this device.</i>";
+            break;
+
+            case false:
+                document.getElementById("msg").innerHTML = "";
+            break;
+        }
+    }
+
 </script>
-    
 </body>
 </html>
